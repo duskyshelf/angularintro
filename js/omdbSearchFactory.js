@@ -11,7 +11,19 @@ githubUserSearch.factory('OmdbSearch', ['$http', function($http) {
         }
       });
 
+    },
+    full: function(filmTitle) {
+
+      return $http({
+        url: queryUrl,
+        method: 'GET',
+        params: {
+          't': filmTitle
+        }
+      });
+
     }
+
   };
 
 }]);

@@ -8,6 +8,9 @@ githubUserSearch.controller('GitUserSearchController', [ 'Search', 'OmdbSearch',
       });
     OmdbSearch.query(self.searchTerm)
       .then(function(response) {
+        return OmdbSearch.full(response.data.Search[0].Title);
+      })
+      .then(function(response) {
         self.omdbResult = response.data;
       });
   };
